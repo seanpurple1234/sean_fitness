@@ -1,21 +1,17 @@
-p_male = { }
-p_female = { }
-cal = { }
-cal_need = { }
-fat = { }
-carbs = { }
-pro = { }
-g_fat = { }
-g_carbs = { }
-g_pro = { }
 import sys 
 
-def calorie(p_male,p_female,cal,cal_need,fat,carbs,pro,g_carbs,g_fat,g_pro):
-    gender = "male"#{}
-    exer = "extreme"# no matter what i put in this doesnt do anytthing 
-    goal = "add"#{}
-    up = "1"
-    down = "0.5" #{}
+def calorie(gender, exer, goal, up, down):
+    p_male = { }
+    p_female = { }
+    cal = { }
+    cal_need = { }
+    fat = { }
+    carbs = { }
+    pro = { }
+    g_fat = { }
+    g_carbs = { }
+    g_pro = { }
+
     m = {1: 100}
     h = {1: 180}
     y = {1: 23}
@@ -287,17 +283,7 @@ def calorie(p_male,p_female,cal,cal_need,fat,carbs,pro,g_carbs,g_fat,g_pro):
              "Grams of Protein": round(g_pro)
              }
 
-
-output = calorie(p_male,
-        p_female,
-        cal,
-        cal_need,
-        fat,
-        carbs,
-        pro,
-        g_fat,
-        g_carbs,
-        g_pro)
+output = calorie("male", "extreme", "add", "1", "0.5")
 
 print(output)
 
