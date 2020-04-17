@@ -2,10 +2,105 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Sean's fitness centre</title>
-		<link rel="stylesheet" href="/static/main.css">
+		<title>Sean's Fitness Centre</title>
+		<link rel="stylesheet" href="../static/main.css">
+		<style>
+
+		</style>
 	</head>
 	<body>
-    <p>The start...</p>
+		<nav>
+			<a href="home.html">home</a>
+			<a href="user.html">USER</a>
+          </nav>
+		<h1> Fitness Calculator
+		</h1>
+		<h2>Information Needed</h2>
+			<p> The following information is needed in order to determine your required daily caloric needs: </p>
+				<ul>
+				<li> Gender</li>
+				
+				<li> Fitness Goal</li>
+				<li> Activity Level</li>
+				<li> Weekly Goal </li>
+				<li>Body Weight: In kilograms (kg)</li> <!-- add convertor from pounds-->
+				<li>Height: In centimeters (cm)</li> <!-- add convertor from feet and inches -->
+				<li>Age</li> 
+				</ul>
+			<h3>Below is a description of the above information that is needed</h3>
+				<ul> 
+				<li> <strong>Gender</strong>: Are you a male or female</li>
+				<li> <strong>Fitness Goal</strong>: Are you looking to add or lose body weight?</li>
+				<li> <strong>Activity Level</strong>: There are many differnet activity levels to be considered.</li>
+					<br> <ol>
+						<li> <strong>Stationary</strong>: less than 30 minutes of activity per day, spend most of your day sitting. </li>
+						<li> <strong>Light</strong>:  30 minutes of vigorous activity per day, spend some time on your feet.  </li>
+						<li> <strong>Moderate</strong>: 30 to 60 minutes of vigorous activity per day, spend most time on your feet. </li>
+						<li> <strong>Active</strong>: over an hour of vigorous activity per day, spend most of the day doing some physical activity  </li>
+						<li> <strong>Extreme</strong>: over 2 hours of vigorous activity per day, spend most of the day doing heavy physical activity </li>
+					</ol> <br>
+				<li> <strong>Weekly Goal</strong>: would you like to gain or lose body weight every week? By how much 0.5 or 1 pound?  </li>
+				</ul> <br>
+
+			<form action="submission.html" method="POST">
+				<label for = "gender"> Please enter your gender </label> <br>
+				<select id = "gender" name = "gender">
+					<option value ="male"> Male</option>
+					<option value ="female"> Female</option>
+				</select> <br>
+				<br>
+				<label for = "goal">Would you like to add or lose weight?</label> <br>
+				<select id = "goal" name = "goal">
+					<option value = "add">Add</option>
+					<option value = "lose">Lose</option>
+				</select> <br> 
+				<p> How many pounds per week would you like to change?</p>
+				<label id = "0.5" >0.5</label>
+				<input id = "change" name = "change" type = "radio" value = "0.5">
+				<br>
+				<label id = "1" >1</label>
+				<input id = "change" name = "change" type = "radio" value = "1">
+				<br> <br>
+				<label for ="exercise"> What is your daily activity level?</label> <br>
+				<select id = "exercise" name = "exercise">
+					<option value = "statinary"> Stationary</option>
+					<option value = "light"> Light</option>
+					<option value = "moderate"> Moderate</option>
+					<option value = "active"> Active</option>
+					<option value = "extreme"> Extreme</option>
+				</select>
+				<br><br>
+
+				<label for = "mass" >What is your body weight in kilograms? </label> <br>
+				<input id = "mass" name = "mass" type ="number" min = "0">
+				<br><br>
+
+				<label for = "height"> what is your height in centimeters?</label> <br>
+				<input id = "height" name = "height" type ="number" min = "0">
+				<br> <br>
+
+				<label for = "age" >What is your age? </label> <br>
+				<input id = "age" name = "age" type ="number" min = "0">
+				<br><br>
+				</select>
+
+				<selection class = "submission">
+					<input type = "submit" value = "Send">
+					
+				</selection>
+
+			</form>
+			
+			
+
+
+			</form>
+
+
+
+			</form>
+
+	{%block content %}{% endblock %}
+
 	</body>
 </html>

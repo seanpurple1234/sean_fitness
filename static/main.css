@@ -1,0 +1,9 @@
+.title {
+    color: red;
+}
+
+#banner .title  {
+    border: 3px solid gold;
+    width: 470px;
+    height: 40px;
+}
