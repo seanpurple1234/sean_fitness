@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Sean's Fitness Centre</title>
-		<link rel="stylesheet" href="../static/main.css">
+		<link rel="stylesheet" href="/static/main.css">
 		<style>
 
 		</style>
@@ -12,7 +12,7 @@
 		<nav>
 			<a href="home.html">home</a>
 			<a href="user.html">USER</a>
-          </nav>
+    </nav>
 		<h1> Fitness Calculator
 		</h1>
 		<h2>Information Needed</h2>
@@ -42,7 +42,7 @@
 				<li> <strong>Weekly Goal</strong>: would you like to gain or lose body weight every week? By how much 0.5 or 1 pound?  </li>
 				</ul> <br>
 
-			<form action="submission.html" method="POST">
+			<form method="POST">
 				<label for = "gender"> Please enter your gender </label> <br>
 				<select id = "gender" name = "gender">
 					<option value ="male"> Male</option>
@@ -83,24 +83,8 @@
 				<input id = "age" name = "age" type ="number" min = "0">
 				<br><br>
 				</select>
-
-				<selection class = "submission">
-					<input type = "submit" value = "Send">
-					
-				</selection>
+				<input type = "submit" value = "Send">
 
 			</form>
-			
-			
-
-
-			</form>
-
-
-
-			</form>
-
-	{%block content %}{% endblock %}
-
 	</body>
 </html>
