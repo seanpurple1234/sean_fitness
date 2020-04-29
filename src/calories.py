@@ -1,5 +1,5 @@
-
-def calculator(gender, exer, goal, up, down):
+def calculator(gender, exer, goal, change, mass, height, age):
+    import sys
     p_male = { }
     p_female = { }
     cal = { }
@@ -8,59 +8,55 @@ def calculator(gender, exer, goal, up, down):
     carbs = { }
     pro = { }
     g_fat = { }
-    g_carbs = { }
+    g_carbs = { } 
     g_pro = { }
 
-    m = {1: 100}
-    h = {1: 180}
-    y = {1: 23}
 
-    #male,stationary
+#male,stationary
     if (gender == "male" or gender == "female"
         and exer == "stationary" or exer ==  "light" or exer == "moderate" or exer ==  "active" or exer ==  "extreme"
         and goal =="add" or goal == "lose"
-        and up == "0.5" or up == "1"
-        and down == "0.5" or down == "1"): 
+        and change == "0.5" or change == "1"): 
         
-        if gender == "male" and exer == "stationary" and goal == "add" and up == "0.5":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        if gender == "male" and exer == "stationary" and goal == "add" and change == "0.5":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.2 * p_male #cals used per day
             cal_need = cal + 250
 
 
-        elif gender == "male" and exer == "stationary" and goal == "add" and up == "1":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "stationary" and goal == "add" and change == "1":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.2 * p_male  #cals used per day
             cal_need = cal + 500
 
-        elif gender == "male" and exer == "stationary" and goal == "lose" and down == "0.5":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "stationary" and goal == "lose" and change == "0.5":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.2 * p_male  #cals used per day
             cal_need = cal - 250    
 
-        elif gender == "male" and exer == "stationary" and goal == "lose" and down =="1":
-            p_male = (13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362) #BMR
+        elif gender == "male" and exer == "stationary" and goal == "lose" and change =="1":
+            p_male = (13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362) #BMR
             cal =  1.2 * p_male #cals used per day
             cal_need = cal - 500
             
 #female, stationary 
-        elif gender == "female" and exer == "stationary" and  goal =="add" and up == "0.5":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "stationary" and  goal =="add" and change == "0.5":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.2 * p_female  #cals per day
             cal_need = cal + 250
             
-        elif gender == "female" and exer == "stationary" and  goal =="add" and up == "1":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "stationary" and  goal =="add" and change == "1":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.2 * p_female  #cals per day
             cal_need = cal + 500
             
-        elif gender == "female" and exer == "stationary" and  goal =="lose" and down == "0.5":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "stationary" and  goal =="lose" and change == "0.5":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.2 * p_female #cals per day
             cal_need = cal - 250
 
-        elif gender == "female" and exer == "stationary" and  goal =="lose" and down == "1":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "stationary" and  goal =="lose" and change == "1":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.2 * p_female #cals per day
             cal_need = cal - 500
 
@@ -72,44 +68,44 @@ def calculator(gender, exer, goal, up, down):
             
 
 # male light
-        elif gender == "male" and exer == "light" and goal == "add" and up == "0.5":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "light" and goal == "add" and change == "0.5":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.25 * p_male  #cals used per day
             cal_need = cal + 250
 
-        elif gender == "male" and exer == "light" and goal == "add" and up == "1":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "light" and goal == "add" and change == "1":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.25 * p_male  #cals used per day
             cal_need = cal + 500
 
-        elif gender == "male" and exer == "light" and goal == "lose" and down == "0.5":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "light" and goal == "lose" and change == "0.5":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.25 * p_male  #cals used per day
             cal_need = cal - 250    
 
-        elif gender == "male" and exer == "light" and goal == "lose" and down =="1":
-            p_male = (13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362) #BMR
+        elif gender == "male" and exer == "light" and goal == "lose" and change =="1":
+            p_male = (13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362) #BMR
             cal =  1.25 * p_male #cals used per day
             cal_need = cal - 500
             
 #female, light  
-        elif gender == "female" and exer == "light" and  goal =="add" and up == "0.5":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "light" and  goal =="add" and change == "0.5":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.25 * p_female  #cals per day
             cal_need = cal + 250
             
-        elif gender == "female" and exer == "light" and  goal =="add" and up == "1":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "light" and  goal =="add" and change == "1":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.25 * p_female  #cals per day
             cal_need = cal + 500
             
-        elif gender == "female" and exer == "light" and  goal =="lose" and down == "0.5":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "light" and  goal =="lose" and change == "0.5":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.25 * p_female #cals per day
             cal_need = cal - 250
 
-        elif gender == "female" and exer == "light" and  goal =="lose" and down == "1":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "light" and  goal =="lose" and change == "1":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.25 * p_female #cals per day
             cal_need = cal - 500
 
@@ -121,44 +117,44 @@ def calculator(gender, exer, goal, up, down):
 
 
 # male moderate
-        elif gender == "male" and exer == "moderate" and goal == "add" and up == "0.5":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "moderate" and goal == "add" and change == "0.5":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.5 * p_male #cals used per day
             cal_need = cal + 250
 
-        elif gender == "male" and exer == "moderate" and goal == "add" and up == "1":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "moderate" and goal == "add" and change == "1":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.5 * p_male  #cals used per day
             cal_need = cal + 500
 
-        elif gender == "male" and exer == "moderate" and goal == "lose" and down == "0.5":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "moderate" and goal == "lose" and change == "0.5":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.5 * p_male  #cals used per day
             cal_need = cal - 250    
 
-        elif gender == "male" and exer == "moderate" and goal == "lose" and down =="1":
-            p_male = (13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362) #BMR
+        elif gender == "male" and exer == "moderate" and goal == "lose" and change =="1":
+            p_male = (13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362) #BMR
             cal =  1.5 * p_male #cals used per day
             cal_need = cal - 500
             
 #female, moderate 
-        elif gender == "female" and exer == "moderate" and  goal =="add" and up == "0.5":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "moderate" and  goal =="add" and change == "0.5":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.5 * p_female  #cals per day
             cal_need = cal + 250
             
-        elif gender == "female" and exer == "moderate" and  goal =="add" and up == "1":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "moderate" and  goal =="add" and change == "1":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.5 * p_female  #cals per day
             cal_need = cal + 500
             
-        elif gender == "female" and exer == "moderate" and  goal =="lose" and down == "0.5":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "moderate" and  goal =="lose" and change == "0.5":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.5 * p_female #cals per day
             cal_need = cal - 250
 
-        elif gender == "female" and exer == "moderate" and  goal =="lose" and down == "1":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "moderate" and  goal =="lose" and change == "1":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.5 * p_female #cals per day
             cal_need = cal - 500
 
@@ -169,44 +165,44 @@ def calculator(gender, exer, goal, up, down):
 
 
 # male active
-        elif gender == "male" and exer == "active" and goal == "add" and up == "0.5":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "active" and goal == "add" and change == "0.5":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.6 * p_male  #cals used per day
             cal_need = cal + 250
 
-        elif gender == "male" and exer == "active" and goal == "add" and up == "1":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "active" and goal == "add" and change == "1":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.6 * p_male  #cals used per day
             cal_need = cal + 500
 
-        elif gender == "male" and exer == "active" and goal == "lose" and down == "0.5":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "active" and goal == "lose" and change == "0.5":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.6 * p_male  #cals used per day
             cal_need = cal - 250    
 
-        elif gender == "male" and exer == "active" and goal == "lose" and down =="1":
-            p_male = (13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362) #BMR
+        elif gender == "male" and exer == "active" and goal == "lose" and change =="1":
+            p_male = (13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362) #BMR
             cal =  1.6 * p_male #cals used per day
             cal_need = cal - 500
             
 #female, active 
-        elif gender == "female" and exer == "active" and  goal =="add" and up == "0.5":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "active" and  goal =="add" and change == "0.5":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.6 * p_female  #cals per day
             cal_need = cal + 250
             
-        elif gender == "female" and exer == "active" and  goal =="add" and up == "1":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "active" and  goal =="add" and change == "1":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.6 * p_female  #cals per day
             cal_need = cal + 500
             
-        elif gender == "female" and exer == "active" and  goal =="lose" and down == "0.5":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "active" and  goal =="lose" and change == "0.5":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.6 * p_female #cals per day
             cal_need = cal - 250
 
-        elif gender == "female" and exer == "active" and  goal =="lose" and down == "1":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "active" and  goal =="lose" and change == "1":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.6 * p_female #cals per day
             cal_need = cal - 500
 
@@ -215,44 +211,44 @@ def calculator(gender, exer, goal, up, down):
 
 
 # male extreme
-        elif gender == "male" and exer == "extreme" and goal == "add" and up == "0.5":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "extreme" and goal == "add" and change == "0.5":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.75 * p_male #cals used per day
             cal_need = cal + 250
 
-        elif gender == "male" and exer == "extreme" and goal == "add" and up == "1":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "extreme" and goal == "add" and change == "1":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.75 * p_male  #cals used per day
             cal_need = cal + 500
 
-        elif gender == "male" and exer == "extreme" and goal == "lose" and down == "0.5":
-            p_male = 13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362 #BMR
+        elif gender == "male" and exer == "extreme" and goal == "lose" and change == "0.5":
+            p_male = 13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362 #BMR
             cal = 1.75 * p_male  #cals used per day
             cal_need = cal - 250    
 
-        elif gender == "male" and exer == "extreme" and goal == "lose" and down =="1":
-            p_male = (13.397*m[1] + 4.799*h[1] - 5.677*y[1] + 88.362) #BMR
+        elif gender == "male" and exer == "extreme" and goal == "lose" and change =="1":
+            p_male = (13.397*float(mass) + 4.799*float(height) - 5.677*float(age) + 88.362) #BMR
             cal =  1.75 * p_male #cals used per day
             cal_need = cal - 500
             
 #female extreme
-        elif gender == "female" and exer == "extreme" and  goal =="add" and up == "0.5":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "extreme" and  goal =="add" and change == "0.5":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.75 * p_female  #cals per day
             cal_need = cal + 250
             
-        elif gender == "female" and exer == "extreme" and  goal =="add" and up == "1":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "extreme" and  goal =="add" and change == "1":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.75 * p_female  #cals per day
             cal_need = cal + 500
             
-        elif gender == "female" and exer == "extreme" and  goal =="lose" and down == "0.5":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "extreme" and  goal =="lose" and change == "0.5":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.75 * p_female #cals per day
             cal_need = cal - 250
 
-        elif gender == "female" and exer == "extreme" and  goal =="lose" and down == "1":
-            p_female = (9.247*m[1] + 3.098*h[1] - 4.330*y[1] + 447.593) #cal/day
+        elif gender == "female" and exer == "extreme" and  goal =="lose" and change == "1":
+            p_female = (9.247*float(mass) + 3.098*float(height) - 4.330*float(age) + 447.593) #cal/day
             cal = 1.75 * p_female #cals per day
             cal_need = cal - 500
 
@@ -271,13 +267,13 @@ def calculator(gender, exer, goal, up, down):
     g_pro = pro/4
 
 
-    return { "BMR": round(p_male) if gender =="male" else round(p_female),#how to get output to be p_male or p_female depending on condition met ???
-             "Total Calories used per day": round(cal),
-             "Total Calories needed per day": round(cal_need),
-             "Calories of Which Carbs": round(carbs),
+    return { "BMR": round(p_male) if gender =="male" else round(p_female),
+             "Total Cals used": round(cal),
+             "Total Cals needed": round(cal_need),
+             "Cals of Which Carbs": round(carbs),
              "Grams of Carbs": round(g_carbs),
-             "Calories of Which Fat": round(fat),
+             "Cals of Which Fat": round(fat),
              "Grams of Fat": round(g_fat),
-             "Calories of Which Protein": round(pro),
+             "Cals of Which Protein": round(pro),
              "Grams of Protein": round(g_pro)
              }

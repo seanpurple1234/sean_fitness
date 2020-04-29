@@ -1,9 +1,21 @@
 .title {
-    color: red;
+    color: purple;
 }
 
 #banner .title  {
-    border: 3px solid gold;
+    border: 3px solid black;
     width: 470px;
     height: 40px;
 }
+table {
+    border-collapse: collapse;
+  }
+  
+  table, th, td, tr {
+    border: 1px solid black;
+    text-align: left;
+  }
+
+  th, td {
+    padding: 15px;
+  }

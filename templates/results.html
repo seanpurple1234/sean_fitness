@@ -6,7 +6,55 @@
 		<link rel="stylesheet" href="/static/main.css">
 	</head>
 	<body>
-    <h1>Results</h1>
-    <p>{{ message }}</p>
+		<nav>
+			<a href="/calculator">Calculator</a>
+    	</nav>
+	<h1>Results</h1>
+		<table>
+		<thead>
+		</thead>
+		<tbody>
+			<tr>
+				<th>BMR</th>
+				<td  >{{ BMR }} Calories </td> 
+			</tr>
+			<tr>
+				<th>Total calories burned per day</th>
+				<td> {{ CalsUsed }} Calories </td>
+			</tr>
+			<tr>
+				<th>Total Calories needed to Achieve Goal</th>
+				<td> {{ CalsNeed }} Calories </td>
+			</tr>
+			<tr>
+				<th>Total Calories in Carbohydrates</th>
+				<td> {{ CalsCarbs }} Calories </td>
+			</tr>
+			<tr>
+				<th>Total Grams of Carbohydrates Needed</th>
+				<td> {{ GramsCarbs }} Grams</td>
+			</tr>
+			<tr>
+				<th>Total Calories in Fat</th>
+				<td> {{ CalsFat }} Calories</td>
+			</tr>
+			<tr>
+				<th>Total Grams of Fat Needed</th>
+				<td> {{ GramsFat }} Grams</td>
+			</tr>
+			<tr>
+				<th>Total Calories in Protein</th>
+				<td> {{ CalsPro }} Calories</td>
+			</tr>
+			<tr>
+				<th>Total Grams of Protein Needed</th>
+				<td> {{ GramsPro }} Grams</td>
+			</tr>
+
+		
+			
+			</tbody>
+		</table>
+
 	</body>
 </html>
