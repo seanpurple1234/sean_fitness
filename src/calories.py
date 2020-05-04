@@ -1,5 +1,4 @@
 import sys 
-from main import request
 
 def _stationary(gender,mass,height,age,const):
     output = { }
